@@ -14,15 +14,17 @@ class CourseController extends Controller
         $validated = $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'active' => 'required|boolean'  
+            'active' => 'nullable|boolean'  
         ]);
+
+        $validated['active'] = $request->has('active');
 
 
         Course::create($validated);
 
         return redirect()->route('home')->with('success', 'Course added succesfully');
     }
-    
+
     public function index(Request $request)
     {
         $courses = Course::orderBy('title', 'asc')->get();
