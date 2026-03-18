@@ -1,40 +1,42 @@
-{{-- @section('title','Add a course')
+@extends('layout.layout')
 
-@section('content') --}}
+@section('title','Add a course')
 
-<form action="/courses" method="POST">
-    @csrf
+@section('content')
 
-    <div>
-        <label for="title">Title</label>
-        <input type="text" name="title" placeholder="Title">
-    </div>
+    <form action="/courses" method="POST">
+        @csrf
 
-    <div>
-        <label for="description">Description</label>
-        <textarea name="description" placeholder="Description"></textarea>
-    </div>
-
-    <div>
-        <label>
-            <input type="checkbox" name="active" value="1">
-            Active
-        </label>     
-    </div>
-    
-    <div>
-        @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
+        <div>
+            <label for="title">Title</label>
+            <input type="text" name="title" placeholder="Title">
         </div>
-        @endif
-    </div>
 
-    <button type="submit">Create Course</button>
-</form>
+        <div>
+            <label for="description">Description</label>
+            <textarea name="description" placeholder="Description"></textarea>
+        </div>
 
-{{-- @endsection --}}
+        <div>
+            <label>
+                <input type="checkbox" name="active" value="1">
+                Active
+            </label>     
+        </div>
+
+        <div>
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+        </div>
+
+        <button type="submit">Create Course</button>
+    </form>
+
+@endsection
