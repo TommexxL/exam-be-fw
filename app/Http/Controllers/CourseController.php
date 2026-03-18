@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use App\Models\Course;
 
 class CourseController extends Controller
 {
@@ -13,11 +15,20 @@ class CourseController extends Controller
             'title' => 'required',
             'description' => 'required',
             'active' => 'required|boolean'  
-    ]);
+        ]);
 
 
         Course::create($validated);
 
-        return redirect('/courseadd')->with('succes', 'posted succesfully');
+        return redirect('/home')->with('success', 'posted succesfully');
+    }
+
+    public function index(Request $request)
+    {
+        $courses = Course::orderBy('title', 'asc')->get();
+
+        return view('home', [
+        'courses' => $courses
+        ]);
     }
 }
