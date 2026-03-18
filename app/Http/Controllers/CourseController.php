@@ -12,7 +12,7 @@ class CourseController extends Controller
     {
         
         $validated = $request->validate([
-            'title' => 'required',
+            'title' => 'required|min:3',
             'description' => 'required',
             'active' => 'nullable|boolean'  
         ]);
