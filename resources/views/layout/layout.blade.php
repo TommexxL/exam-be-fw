@@ -11,8 +11,8 @@
 
     <div>
         <ul class="links">
-			<li class=""><a href="/home">Home</a></li>
-			<li class=""><a href="/courseadd">Add a course</a></li>
+			<li class=""><a href="/home">Overwicht</a></li>
+			<li class=""><a href="/courseadd">Nieuwe cursus toevoegen</a></li>
 		</ul>
     </div>
 
