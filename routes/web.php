@@ -18,3 +18,4 @@ Route::get('/home', function () {
 Route::get('/home', [CourseController::class, 'index'])->name('home');
 Route::post('/courses', [CourseController::class, 'store']);
 
+Route::patch('/courses/{id}/toggle', [CourseController::class, 'toggle'])->name('courses.toggle');
