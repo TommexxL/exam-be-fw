@@ -20,7 +20,7 @@ class CourseController extends Controller
 
         Course::create($validated);
 
-        return redirect('/home')->with('success', 'posted succesfully');
+        return redirect('/home')->with('success', 'Course added succesfully');
     }
 
     public function index(Request $request)
