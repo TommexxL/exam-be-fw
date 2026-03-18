@@ -15,6 +15,6 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('/home', [CourseController::class, 'index']);
+Route::get('/home', [CourseController::class, 'index'])->name('home');
 Route::post('/courses', [CourseController::class, 'store']);
 
