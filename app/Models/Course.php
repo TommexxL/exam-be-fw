@@ -7,4 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
     protected $fillable = ['title','description','active'];
+    // no need to at created at
 }
