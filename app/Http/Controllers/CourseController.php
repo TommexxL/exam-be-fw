@@ -33,4 +33,14 @@ class CourseController extends Controller
         'courses' => $courses
         ]);
     }
+
+    public function toggle($id)
+{
+    $course = Course::findOrFail($id);
+
+    $course->active = !$course->active;
+    $course->save();
+
+    return redirect()->route('home')->with('success', 'Status updated');
+}
 }
